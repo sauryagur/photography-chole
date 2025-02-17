@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <title>Home - Brand</title>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap" rel="stylesheet">
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+</head>
+
+<body data-bs-offset="77" data-bs-spy="scroll" data-bs-target="#mainNav" id="page-top">
+<nav class="navbar navbar-expand-md fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand" href="#">Lens Life</a>
+        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button" value="Menu"><i
+                class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item nav-link"><a class="nav-link active" href="#gallery">Gallery</a></li>
+                <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/img/intro-bg.jpg');">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="brand-heading m-0">Lens Life</h1>
+                    <p class="intro-text">moments captured in monochrome</p><a class="btn btn-link btn-circle"
+                                                                               href="#about" role="button"><i
+                        class="fa fa-angle-double-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="photo-gallery py-4 py-xl-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h1>Gallery</h1>
+                <p class="w-lg-50">Discover the timeless beauty of black &amp; white photography, where every shot tells
+                    a deeper story.</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button aria-expanded="false" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    style="background: black;color: white;border-style: outset;border-color: white;" type="button">Sort
+                by type
+            </button>
+            <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item"
+                                                                                          href="#">Second Item</a><a
+                    class="dropdown-item" href="#">Third Item</a></div>
+        </div>
+        <div class="row gx-2 gy-2 row-cols-1 row-cols-md-2 row-cols-xl-3 photos" data-bss-baguettebox="">
+            <div class="col item"><img class="img-fluid" src="assets/img/1.jpg"></div>
+            <div class="col item"><img class="img-fluid" src="assets/img/2.jpg"></div>
+            <div class="col item"><img class="img-fluid" src="assets/img/3.jpg"></div>
+            <div class="col item"><img class="img-fluid" src="assets/img/4.png"></div>
+            <div class="col item"><img class="img-fluid" src="assets/img/5.jpg"></div>
+            <div class="col item"><img class="img-fluid" src="assets/img/6.jpg"></div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container text-center">
+        <p>Copyright ©&nbsp;Team Chole 2025</p>
+    </div>
+</footer>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/script.min.js"></script>
+'
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.photos');
+    const items = Array.from(container.children);
+
+    // Sort images by their 'data-type' attribute
+    items.sort((a, b) => {
+        const typeA = a.querySelector('img').getAttribute('data-type');
+        const typeB = b.querySelector('img').getAttribute('data-type');
+        return typeA.localeCompare(typeB);
+    });
+
+    // Remove all current items from the container
+    container.innerHTML = '';
+
+    // Append the sorted items back into the container
+    items.forEach(item => {
+        container.appendChild(item);
+    });
+});</script>
+</body>
+
+</html>
